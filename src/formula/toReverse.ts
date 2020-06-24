@@ -1,15 +1,10 @@
-import { Uint8ClampedArrayToPixelArray } from 'src/utils/Uint8ClampedArrayToPixelArray'
-import { PixelArrayToUint8ClampedArray } from 'src/utils/PixelArrayToUint8ClampedArray'
+import { Rgba } from 'src/utils/getRgba'
 
-export function toReverse(uintc8: Uint8ClampedArray) {
-  const pixelArray = Uint8ClampedArrayToPixelArray(uintc8)
-
-  const reversePixelArray = pixelArray.map(({ R, G, B, A }) => ({
+export function toReverse({ R, G, B, A }: Rgba) {
+  return {
     R: 255 - R,
     G: 255 - G,
     B: 255 - B,
     A,
-  }))
-
-  return PixelArrayToUint8ClampedArray(reversePixelArray)
+  }
 }

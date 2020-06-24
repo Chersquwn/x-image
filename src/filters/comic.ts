@@ -1,9 +1,15 @@
+import { getRgba } from 'src/utils/getRgba'
 import { toComic } from 'src/formula/toComic'
 
 export function comic(imageData: ImageData) {
   const data = imageData.data
 
-  const comicData = toComic(data)
+  for (let i = 0; i < data.length; i += 4) {
+    const rgba = getRgba(data, i)
+    const { R, G, B } = toComic(rgba)
 
-  comicData.forEach((component, i) => (data[i] = component))
+    data[i] = R
+    data[i + 1] = G
+    data[i + 2] = B
+  }
 }
