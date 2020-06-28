@@ -10,6 +10,7 @@ const $gaussBlur = document.getElementById('gaussBlur') as HTMLImageElement
 const $gray = document.getElementById('gray') as HTMLImageElement
 const $retro = document.getElementById('retro') as HTMLImageElement
 const $reverse = document.getElementById('reverse') as HTMLImageElement
+const $sketch = document.getElementById('sketch') as HTMLImageElement
 
 const width = $origin.width
 const height = $origin.height
@@ -48,4 +49,9 @@ $retro.src = new Layer(width, height).draw($origin).filter('retro').toDataUrl()
 $reverse.src = new Layer(width, height)
   .draw($origin)
   .filter('reverse')
+  .toDataUrl()
+
+$sketch.src = new Layer(width, height)
+  .draw($origin)
+  .filter('sketch')
   .toDataUrl()
