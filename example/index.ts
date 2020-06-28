@@ -8,8 +8,8 @@ const $desaturate = document.getElementById('desaturate') as HTMLImageElement
 const $emboss = document.getElementById('emboss') as HTMLImageElement
 const $gaussBlur = document.getElementById('gaussBlur') as HTMLImageElement
 const $gray = document.getElementById('gray') as HTMLImageElement
-const $retro = document.getElementById('retro') as HTMLImageElement
-const $reverse = document.getElementById('reverse') as HTMLImageElement
+const $sepia = document.getElementById('sepia') as HTMLImageElement
+const $invert = document.getElementById('invert') as HTMLImageElement
 const $sketch = document.getElementById('sketch') as HTMLImageElement
 
 const width = $origin.width
@@ -44,11 +44,11 @@ $gaussBlur.src = new Layer(width, height)
 
 $gray.src = new Layer(width, height).draw($origin).filter('gray').toDataUrl()
 
-$retro.src = new Layer(width, height).draw($origin).filter('retro').toDataUrl()
+$sepia.src = new Layer(width, height).draw($origin).filter('sepia').toDataUrl()
 
-$reverse.src = new Layer(width, height)
+$invert.src = new Layer(width, height)
   .draw($origin)
-  .filter('reverse')
+  .filter('invert')
   .toDataUrl()
 
 $sketch.src = new Layer(width, height)

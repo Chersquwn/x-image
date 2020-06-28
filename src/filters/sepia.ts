@@ -1,12 +1,12 @@
 import { getRgba } from 'src/utils/getRgba'
-import { toRetro } from 'src/formula/toRetro'
+import { toSepia } from 'src/formula/toSepia'
 
-export function retro(imageData: ImageData) {
+export function sepia(imageData: ImageData) {
   const data = imageData.data
 
   for (let i = 0; i < data.length; i += 4) {
     const rgba = getRgba(data, i)
-    const { R, G, B } = toRetro(rgba)
+    const { R, G, B } = toSepia(rgba)
 
     data[i] = R
     data[i + 1] = G

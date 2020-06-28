@@ -2,7 +2,7 @@ import { getRgba } from 'src/utils/getRgba'
 import { toGaussBlur } from 'src/formula/toGaussBlur'
 import { toDodgeColor } from 'src/formula/toDodgeColor'
 import { gray } from './gray'
-import { reverse } from './reverse'
+import { invert } from './invert'
 
 export function sketch(imageData: ImageData) {
   const { data, width, height } = imageData
@@ -16,7 +16,7 @@ export function sketch(imageData: ImageData) {
 
   const copyData = copyImageData.data
 
-  reverse(imageData)
+  invert(imageData)
 
   toGaussBlur(data, width, height, 10, 10)
 
