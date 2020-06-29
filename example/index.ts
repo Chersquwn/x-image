@@ -11,6 +11,7 @@ const $gray = document.getElementById('gray') as HTMLImageElement
 const $sepia = document.getElementById('sepia') as HTMLImageElement
 const $invert = document.getElementById('invert') as HTMLImageElement
 const $sketch = document.getElementById('sketch') as HTMLImageElement
+const $noise = document.getElementById('noise') as HTMLImageElement
 
 const width = $origin.width
 const height = $origin.height
@@ -54,4 +55,10 @@ $invert.src = new Layer(width, height)
 $sketch.src = new Layer(width, height)
   .draw($origin)
   .filter('sketch')
+  .toDataUrl()
+
+$noise.src = new Layer(width, height)
+  .draw($origin)
+  // .filter('gray')
+  .filter('noise')
   .toDataUrl()
