@@ -13,6 +13,7 @@ const $invert = document.getElementById('invert') as HTMLImageElement
 const $sketch = document.getElementById('sketch') as HTMLImageElement
 const $noise = document.getElementById('noise') as HTMLImageElement
 const $sharpen = document.getElementById('sharpen') as HTMLImageElement
+const $brightness = document.getElementById('brightness') as HTMLImageElement
 
 const width = $origin.width
 const height = $origin.height
@@ -63,4 +64,9 @@ $noise.src = new Layer(width, height).draw($origin).filter('noise').toDataUrl()
 $sharpen.src = new Layer(width, height)
   .draw($origin)
   .filter('sharpen')
+  .toDataUrl()
+
+$brightness.src = new Layer(width, height)
+  .draw($origin)
+  .filter('brightness')
   .toDataUrl()

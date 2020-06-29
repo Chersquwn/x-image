@@ -1,4 +1,5 @@
 export { blackWhite } from './blackWhite'
+export { brightness } from './brightness'
 export { casting } from './casting'
 export { comic } from './comic'
 export { desaturate } from './desaturate'
