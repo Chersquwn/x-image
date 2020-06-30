@@ -15,6 +15,7 @@ const $noise = document.getElementById('noise') as HTMLImageElement
 const $sharpen = document.getElementById('sharpen') as HTMLImageElement
 const $brightness = document.getElementById('brightness') as HTMLImageElement
 const $contrast = document.getElementById('contrast') as HTMLImageElement
+const $fog = document.getElementById('fog') as HTMLImageElement
 
 const width = $origin.width
 const height = $origin.height
@@ -76,3 +77,5 @@ $contrast.src = new Layer(width, height)
   .draw($origin)
   .filter('contrast')
   .toDataUrl()
+
+$fog.src = new Layer(width, height).draw($origin).filter('fog').toDataUrl()
