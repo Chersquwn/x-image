@@ -14,6 +14,7 @@ const $sketch = document.getElementById('sketch') as HTMLImageElement
 const $noise = document.getElementById('noise') as HTMLImageElement
 const $sharpen = document.getElementById('sharpen') as HTMLImageElement
 const $brightness = document.getElementById('brightness') as HTMLImageElement
+const $contrast = document.getElementById('contrast') as HTMLImageElement
 
 const width = $origin.width
 const height = $origin.height
@@ -69,4 +70,9 @@ $sharpen.src = new Layer(width, height)
 $brightness.src = new Layer(width, height)
   .draw($origin)
   .filter('brightness')
+  .toDataUrl()
+
+$contrast.src = new Layer(width, height)
+  .draw($origin)
+  .filter('contrast')
   .toDataUrl()
