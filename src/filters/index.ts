@@ -1,3 +1,4 @@
+export { bilateral } from './bilateral'
 export { blackWhite } from './blackWhite'
 export { brightness } from './brightness'
 export { casting } from './casting'

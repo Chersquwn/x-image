@@ -16,7 +16,8 @@ const $origin = document.getElementById('origin') as HTMLImageElement
 // const $brightness = document.getElementById('brightness') as HTMLImageElement
 // const $contrast = document.getElementById('contrast') as HTMLImageElement
 // const $fog = document.getElementById('fog') as HTMLImageElement
-const $surfaceBlur = document.getElementById('surfaceBlur') as HTMLImageElement
+// const $surfaceBlur = document.getElementById('surfaceBlur') as HTMLImageElement
+const $bilateral = document.getElementById('bilateral') as HTMLImageElement
 
 const width = $origin.width
 const height = $origin.height
@@ -82,8 +83,13 @@ $origin.addEventListener('load', () => {
 
   // $fog.src = new Layer(width, height).draw($origin).filter('fog').toDataUrl()
 
-  $surfaceBlur.src = new Layer(width, height)
+  // $surfaceBlur.src = new Layer(width, height)
+  //   .draw($origin)
+  //   .filter('surfaceBlur')
+  //   .toDataUrl()
+
+  $bilateral.src = new Layer(width, height)
     .draw($origin)
-    .filter('surfaceBlur')
+    .filter('bilateral')
     .toDataUrl()
 })
