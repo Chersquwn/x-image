@@ -1,3 +1,12 @@
+/**
+ * 雾化
+ *
+ * @export
+ * @param {Uint8ClampedArray} uintc8
+ * @param {number} width
+ * @param {number} height
+ * @param {number} [v=6]
+ */
 export function toFog(
   uintc8: Uint8ClampedArray,
   width: number,

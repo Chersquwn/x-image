@@ -1,5 +1,13 @@
 import { Rgba } from 'src/utils/getRgba'
 
+/**
+ * 调整亮度
+ *
+ * @export
+ * @param {Rgba} rgba
+ * @param {number} k
+ * @return {*}
+ */
 export function toBrightness(rgba: Rgba, k: number) {
   const R = rgba.R + k
   const G = rgba.G + k

@@ -1,3 +1,14 @@
+/**
+ * 高斯模糊
+ *
+ * @export
+ * @param {Uint8ClampedArray} uintc8
+ * @param {number} width
+ * @param {number} height
+ * @param {number} [radius=3]
+ * @param {number} [sigma=radius / 3]
+ * @return {*}
+ */
 export function toGaussBlur(
   uintc8: Uint8ClampedArray,
   width: number,

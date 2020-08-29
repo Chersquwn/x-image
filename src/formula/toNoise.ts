@@ -1,5 +1,13 @@
 import { Rgba } from 'src/utils/getRgba'
 
+/**
+ * 生成高斯白噪声
+ *
+ * @export
+ * @param {number} [mean=0.5]
+ * @param {number} [sigma=1]
+ * @return {*}
+ */
 export function generateGaussianNoise(mean: number = 0.5, sigma: number = 1) {
   let x1 = 0
   let x2 = 0
@@ -18,6 +26,16 @@ export function generateGaussianNoise(mean: number = 0.5, sigma: number = 1) {
   return mean + y1 * sigma
 }
 
+/**
+ * 噪声
+ *
+ * @export
+ * @param {Rgba} rgba
+ * @param {number} [mean=0]
+ * @param {number} [sigma=1]
+ * @param {number} [k=100]
+ * @return {*}
+ */
 export function toNoise(
   rgba: Rgba,
   mean: number = 0,

@@ -1,5 +1,12 @@
 import { Rgba } from 'src/utils/getRgba'
 
+/**
+ * 怀旧
+ *
+ * @export
+ * @param {Rgba} { R, G, B, A }
+ * @return {*}
+ */
 export function toSepia({ R, G, B, A }: Rgba) {
   return {
     R: Math.min(255, 0.393 * R + 0.769 * G + 0.189 * B),

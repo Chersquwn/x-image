@@ -1,6 +1,12 @@
-// import { Uint8ClampedArrayToPixelArray } from 'src/utils/Uint8ClampedArrayToPixelArray'
 import { Rgba } from 'src/utils/getRgba'
 
+/**
+ * 连环画
+ *
+ * @export
+ * @param {Rgba} { R, G, B, A }
+ * @return {*}
+ */
 export function toComic({ R, G, B, A }: Rgba) {
   return {
     R: (Math.abs(G - B + G + R) * R) / 256,
